@@ -1,3 +1,3 @@
-2025/04/11-21:37:47.512 56a0 Reusing MANIFEST F:\Coatching\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2025/04/11-21:37:47.513 56a0 Recovering log #23
-2025/04/11-21:37:47.515 56a0 Reusing old log F:\Coatching\.wwebjs_auth\session\Default\Local Storage\leveldb/000023.log 
+2025/04/13-19:45:03.956 b1c Reusing MANIFEST G:\Demo\clean-coatching\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/04/13-19:45:03.958 b1c Recovering log #26
+2025/04/13-19:45:03.959 b1c Reusing old log G:\Demo\clean-coatching\.wwebjs_auth\session\Default\Local Storage\leveldb/000026.log 

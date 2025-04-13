@@ -161,6 +161,7 @@
                         <input type="number" class="paidFees" data-id="<%= student._id %>" 
                             value="<%= student.paidFees %>" min="0" step="1">
                     </td>
+                    
                     <td class="remainingFees">₹<%= student.courseFees - student.paidFees %></td>
                     <td><button class="update-btn" data-id="<%= student._id %>">Update</button></td>
                 </tr>

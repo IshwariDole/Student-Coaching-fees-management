@@ -1,3 +1,3 @@
-2025/04/11-21:37:47.353 611c Reusing MANIFEST F:\Coatching\.wwebjs_auth\session\Default\Sync Data\LevelDB/MANIFEST-000001
-2025/04/11-21:37:47.354 611c Recovering log #3
-2025/04/11-21:37:47.354 611c Reusing old log F:\Coatching\.wwebjs_auth\session\Default\Sync Data\LevelDB/000003.log 
+2025/04/13-19:45:03.882 60d8 Reusing MANIFEST G:\Demo\clean-coatching\.wwebjs_auth\session\Default\Sync Data\LevelDB/MANIFEST-000001
+2025/04/13-19:45:03.883 60d8 Recovering log #3
+2025/04/13-19:45:03.883 60d8 Reusing old log G:\Demo\clean-coatching\.wwebjs_auth\session\Default\Sync Data\LevelDB/000003.log 
