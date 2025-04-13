@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #a0c4ff, #ffffff);
+            text-align: center;
+            padding-top: 20px;
+        }
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        .dashboard-btn {
+            width: 200px;
+            padding: 15px;
+            margin: 10px;
+            font-size: 18px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .dashboard-btn:hover {
+            background-color: #002244;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Coaching Class Dashboard</h1>
+
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.shutterstock.com/image-photo/speaker-business-workshop-presentation-audience-600nw-217119214.jpg" class="d-block w-100" alt="Coaching Image 1">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.shutterstock.com/image-photo/businessman-standing-front-group-people-260nw-1606660822.jpg" class="d-block w-100" alt="Coaching Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.shutterstock.com/image-photo/college-teacher-business-course-trainer-600nw-2020121954.jpg" class="d-block w-100" alt="Coaching Image 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-container">
+        <button class="dashboard-btn" onclick="location.href='/students/register'">Register Student</button>
+        <button class="dashboard-btn" onclick="location.href='/students/records'">View Records</button>
+        <button class="dashboard-btn" onclick="location.href='/students/fees-management'">Fees Management</button>
+        <button class="dashboard-btn" onclick="location.href='/auth/login'">Logout</button>
+    </div>
+</body>
+</html>

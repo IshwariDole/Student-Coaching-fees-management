@@ -1,0 +1,16 @@
+<h2>Student Details</h2>
+<p><strong>Name:</strong> <%= student.name %></p>
+<p><strong>Phone:</strong> <%= student.phone %></p>
+<p><strong>Email:</strong> <%= student.email %></p>
+<p><strong>Fees Paid:</strong> ₹<%= student.feesPaid %></p>
+
+<!-- Update Fees Form -->
+<h3>Update Fees</h3>
+<form action="/students/update/<%= student._id %>" method="POST">
+    <label>New Fees Paid:</label>
+    <input type="number" name="feesPaid" required />
+    <button type="submit">Update</button>
+</form>
+
+<br>
+<a href="/students/records">Go Back</a>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees Management</title>
+    <script src="/js/feesManagement.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #a0c4ff, #ffffff);
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            width: 900px;
+        }
+
+        /* Left Side: Fees Table */
+        .table-container {
+            flex: 2;
+            width: 100%;
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: #003366;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #003366;
+            color: white;
+        }
+
+        td input {
+            width: 80px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Update Button */
+        .update-btn {
+            background-color: #003366;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .update-btn:hover {
+            background-color: #002244;
+        }
+
+        /* Right Side: Reminder Scheduler */
+        .scheduler {
+            flex: 1;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .scheduler label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #003366;
+            align-self: flex-start;
+        }
+
+        .scheduler input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Buttons */
+        .submit-btn, .back-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover, .back-btn:hover {
+            background-color: #002244;
+        }
+
+        .back-btn {
+            background-color: #003366;
+        }
+
+        .back-btn:hover {
+            background-color: #002244;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Left Side: Fees Table -->
+        <div class="table-container">
+            <h2>Fees Management</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Course Fees</th>
+                    <th>Paid Fees</th>
+                    <th>Remaining Fees</th>
+                    <th>Update</th>
+                </tr>
+                <% students.forEach(student => { %>
+                <tr>
+                    <td><%= student.name %></td>
+                    <td><%= student.course %></td>
+                    <td>₹<%= student.courseFees %></td>
+                    <td>
+                        <input type="number" class="paidFees" data-id="<%= student._id %>" 
+                            value="<%= student.paidFees %>" min="0" step="1">
+                    </td>
+                    <td class="remainingFees">₹<%= student.courseFees - student.paidFees %></td>
+                    <td><button class="update-btn" data-id="<%= student._id %>">Update</button></td>
+                </tr>
+                <% }); %>
+            </table>
+        </div>
+
+        <!-- Right Side: Reminder Scheduler -->
+        <div class="scheduler">
+            <h3>Schedule Reminder</h3>
+            <form id="reminderForm">
+                <label for="reminderDate">Date:</label>
+                <input type="date" id="reminderDate" required>
+                <label for="reminderTime">Time:</label>
+                <input type="time" id="reminderTime" required>
+                <button type="submit" class="submit-btn">Schedule</button>
+            </form>
+            <button class="back-btn" onclick="window.location.href='/dashboard'">Back to Dashboard</button>
+        </div>
+
+    </div>
+
+    <script>
+        // Prevent selecting past dates in the reminder scheduler
+        document.addEventListener('DOMContentLoaded', () => {
+            const reminderDateInput = document.getElementById('reminderDate');
+            if (reminderDateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                reminderDateInput.setAttribute('min', today);
+            }
+        });
+    </script>
+</body>
+</html>

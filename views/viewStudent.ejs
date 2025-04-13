@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #a0c4ff, #ffffff);
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+        .details {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .details p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #003366;
+        }
+        .back-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        .back-btn:hover {
+            background-color: #002244;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Details</h2>
+        <div class="details">
+            <p><span class="highlight">Name:</span> <%= student.name %></p>
+            <p><span class="highlight">Email:</span> <%= student.email %></p>
+            <p><span class="highlight">Phone:</span> <%= student.phone %></p>
+            <p><span class="highlight">Course:</span> <%= student.course || "Not Provided" %></p>
+<p><span class="highlight">Course Fees:</span> ₹<%= student.courseFees || 0 %></p>
+<p><strong>Paid Fees:</strong> ₹<%= student.paidFees ? student.paidFees : 0 %></p>
+
+
+        </div>
+        <button class="back-btn" onclick="window.location.href='/students/records'">Back to Records</button>
+    </div>
+</body>
+</html>

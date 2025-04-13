@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #a0c4ff, #ffffff);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: row; /* ✅ Keeps scheduler on the right */
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            width: 800px; /* ✅ Adjusted width */
+        }
+        .form-container {
+            flex: 2;
+            width: 100%;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #003366;
+        }
+        .input-field {
+            width: calc(100% - 20px); /* ✅ Ensures full width */
+            padding: 10px;
+            margin: 5px 0; /* ✅ Reduced margin so all fields fit */
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .submit-btn, .back-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .submit-btn:hover, .back-btn:hover {
+            background-color: #002244;
+        }
+        
+        /* ✅ Scheduler fixed on the right side */
+        .scheduler {
+            flex: 1;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 280px; /* ✅ Adjusted width */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scheduler h3 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #003366;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Single Form with Student Registration + Reminder -->
+        <form action="/students/register" method="POST" class="form-container">
+            <h2>Student Registration</h2>
+            
+            <!-- Registration Fields -->
+            <input type="text" name="name" class="input-field" placeholder="Full Name" required>
+            <input type="email" name="email" class="input-field" placeholder="Email" required>
+            <input type="text" name="phone" class="input-field" placeholder="Phone Number" required>
+            <input type="text" name="course" class="input-field" placeholder="Course" required>
+            <input type="number" name="courseFees" class="input-field" placeholder="Course Fees" required>
+            <input type="number" name="paidFees" class="input-field" placeholder="Paid Fees" required>
+
+            <!-- Right Side: Reminder Fields (Moved inside the form) -->
+            <div class="scheduler">
+                <h3>Schedule Reminder</h3>
+                <label for="reminderDate">Reminder Date:</label>
+                <input type="date" name="reminderDate" class="input-field">
+                
+                <label for="reminderTime">Reminder Time:</label>
+                <input type="time" name="reminderTime" class="input-field">
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+            <button type="button" class="back-btn" onclick="window.history.back();">Go Back</button>
+        </form>
+
+    </div>
+</body>
+</html>
