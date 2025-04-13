@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Student = require('../models/Student');
+const Student = require('../models/student');
 const { sendMessage } = require('../whatsapp/whatsapp');
 const { scheduleMessage } = require('../whatsapp/scheduler');
 
